@@ -23,7 +23,9 @@ let waterData = { goalLiters: 0, bottleVolLiters: 0, consumedLiters: 0, history:
 const defaultSuggestedTasks = [
     "💧 Uống đủ 2L nước",
     "🚫 Không uống đồ ngọt",
-    "🚶 Đi đủ 7000 bước"
+    "🚶 Đi đủ 7000 bước",
+    "🕗 Không ăn sau 20H",
+    "🏃‍♂️ Vận động > 30P"
 ];
 
 // --- KHỞI TẠO & ĐỒNG BỘ REAL-TIME ---
