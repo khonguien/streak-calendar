@@ -25,7 +25,8 @@ const defaultSuggestedTasks = [
     "🚫 Không uống đồ ngọt",
     "🚶 Đi đủ 7000 bước",
     "🕗 Không ăn sau 20H",
-    "🏃‍♂️ Vận động > 30P"
+    "🏃‍♂️ Vận động > 30P",
+    "🏋️‍♂️ Tập Gym > 1H"
 ];
 
 // --- KHỞI TẠO & ĐỒNG BỘ REAL-TIME ---
