@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lịch Công Việc & Water Tracker</title>
+    <title>TeamTracker Global</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,12 +13,13 @@
             <div class="user-selector-wrapper">
                 <span class="avatar">👤</span>
                 <select id="userSelect" onchange="handleUserChange()"></select>
+                <div id="streakDisplay" class="streak-badge"></div>
             </div>
             <button class="delete-name-btn" onclick="deleteCurrentUser()">Xóa User</button>
         </div>
 
         <div class="header">
-            <h1 class="month-title">March</h1>
+            <h1 class="month-title">Tháng 4</h1>
         </div>
 
         <div class="calendar" id="calendarGrid">
@@ -44,16 +45,14 @@
     <div id="waterModalOverlay" class="water-overlay">
         <div class="water-container">
             <button class="close-water-btn" onclick="toggleWaterModal()">✕</button>
-
             <div id="screen-goal" class="water-screen active">
                 <h2>Thiết lập Mục tiêu</h2>
                 <div class="water-input-group">
-                    <label>Cân nặng hiện tại (kg):</label>
-                    <input type="number" id="weightInput" placeholder="VD: 60" min="1" step="0.1">
-                    <div id="weightError" class="water-error">Vui lòng nhập cân nặng hợp lệ!</div>
+                    <label>Cân nặng (kg):</label>
+                    <input type="number" id="weightInput" min="1" step="0.1">
+                    <div id="weightError" class="water-error">Cân nặng không hợp lệ!</div>
                 </div>
                 <button class="water-btn" onclick="calculateGoal()">Tính toán</button>
-
                 <div id="goalSelectionArea" style="display: none;">
                     <div id="waterRecommendationText" class="recommendation-box"></div>
                     <div class="water-input-group">
@@ -63,19 +62,17 @@
                     <button class="water-btn" onclick="goToScreenBottle()">Tiếp tục</button>
                 </div>
             </div>
-
             <div id="screen-bottle" class="water-screen">
                 <h2>Thiết lập Bình nước</h2>
                 <div class="water-input-group">
                     <label>Thể tích bình (ml):</label>
-                    <input type="number" id="bottleInput" placeholder="VD: 500" min="1">
-                    <div id="bottleError" class="water-error">Vui lòng nhập thể tích hợp lệ!</div>
+                    <input type="number" id="bottleInput" min="1">
+                    <div id="bottleError" class="water-error">Thể tích không hợp lệ!</div>
                 </div>
                 <button class="water-btn" onclick="goToScreenTracker()">Xác nhận</button>
             </div>
-
             <div id="screen-tracker" class="water-screen">
-                <h2>Tiến độ của <span id="userNameDisplay" style="color:#e74c3c;">Bạn</span></h2>
+                <h2>Tiến độ của <span id="userNameDisplay" style="color:#e74c3c;">...</span></h2>
                 <div class="progress-text"><span id="consumedText">0.00</span>L / <span id="goalText">0.0</span>L</div>
                 <div class="progress-container"><div id="progressBar" class="progress-bar"></div></div>
                 <button class="water-btn" onclick="addBottle()">+1 Bình (<span id="btnBottleVol">0</span>ml)</button>
@@ -83,13 +80,13 @@
                     <h3>Lịch sử hôm nay</h3>
                     <ul id="historyList"></ul>
                 </div>
-                <button class="reset-water-btn" onclick="resetWaterApp()">⚙️ Cài đặt lại từ đầu</button>
+                <button class="reset-water-btn" onclick="resetWaterApp()">⚙️ Cài đặt lại</button>
             </div>
         </div>
     </div>
+
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-database-compat.js"></script>
     <script src="script.js"></script>
-    <!-- <script src="script.js"></script> -->
 </body>
 </html>
